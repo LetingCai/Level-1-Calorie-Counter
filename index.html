@@ -7,37 +7,27 @@
     <script src = "script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<body onload = initialize()>
+<body onload = "initialize()">
     <h1>Calorie Counter Project</h1>
 
-    <p id = "test">
-        test:
-    </p>
-    <div class = "Appetizer">
-        Appetizer: <span id = "Appetizer Calorie"></span>
-
+    <div id = "Appetizer" class = "Main">
+        Appetizer: <span id = "Appetizer Calorie">0</span>
     </div>
 
-    <div class = "Entree">
-        Entree: <span id = "Entree Calorie"></span>
-    <p class = "Protein">Protein: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
-    <p class = "carb">Carbohydrate: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
-    <p class = "fat">Fat: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
+    <div id = "Entree" class = "Main">
+        Entree: <span id = "Entree Calorie">0</span>
     </div>
 
-    <div class = "Desert">
-        Desert: <span id = "DesertCalorie"></span>
-    <p class = "Protein">Protein: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
-    <p class = "carb">Carbohydrate: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
-    <p class = "fat">Fat: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
+    <div id = "Desert" class = "Main">
+        Desert: <span id = "Desert Calorie">0</span>
     </div>
 
-    <p>Total Calorie: <span id = "Total Calorie"></span></p>
+    <div id = "Total">Total Calorie: <span id = "Total Calorie">0</span></div>
 
-    <p id = "image">
+    <div id = "image">
     <p class = "Protein">Protein: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
-    <p class = "carb">Carbohydrate: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
-    <p class = "fat">Fat: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
-    </p>
+    <p class = "Carb">Carbohydrate: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
+    <p class = "Fat">Fat: <button onclick = "subtract()">-</button><span>0</span><button onclick="add()">+</button></p>
+    </div>
 </body>
 </html>

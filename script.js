@@ -1,15 +1,10 @@
 function initialize(){
-    const image = document.querySelector('#image');
-    console.log(image)
-    const clone = image.cloneNode(true);
-    console.log(clone);
-    var list = document.body.getElementsByTagName("div");
-    console.log(list);
+    const clone = document.getElementById("image");
+    var list = document.body.getElementsByClassName("Main");
     for (let i = 0; i < list.length; i++){
-        console.log(list.item(i));
-        list.item(i).appendChild(image);
+        list.item(i).innerHTML+=clone.innerHTML;
     }
-
+    clone.remove();
 }
 
 function subtract(){
@@ -34,17 +29,21 @@ function add(){
 }
 
 function display(){
-
+    var appetizerCalorie = getCalorie("Appetizer");
+    var entreeCalorie = getCalorie("Entree");
+    var desertCalorie = getCalorie("Desert");
+    document.getElementById("Appetizer Calorie").innerHTML = appetizerCalorie;
+    document.getElementById("Entree Calorie").innerHTML = entreeCalorie;
+    document.getElementById("Desert Calorie").innerHTML = desertCalorie;
+    document.getElementById("Total Calorie").innerHTML = appetizerCalorie + entreeCalorie + desertCalorie;
 }
 
-function totalPCF(nutrient){
-    var x = 0;
-    const list = document.getElementsByClassName(nutrient)
-    console.log(list)
-    for (let y = 0; y < list.length; y++){
-        x = x + Number(list[y].getElementsByTagName("span")[0].innerHTML);
-    }
-    return x;
+function getCalorie(ID){
+    const list = document.getElementById(ID);
+    var Protein = list.getElementsByClassName("Protein")[0].getElementsByTagName("span")[0].innerHTML;
+    var Carb = list.getElementsByClassName("Carb")[0].getElementsByTagName("span")[0].innerHTML;
+    var Fat = list.getElementsByClassName("Fat")[0].getElementsByTagName("span")[0].innerHTML;
+    return (Protein*4)+(Carb*4)+(Fat*9);
 }
 
 
